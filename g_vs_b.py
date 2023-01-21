@@ -1,27 +1,18 @@
 # The analization code, which show who is smarter, girls or boys by exam marks
-
-
-
-
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-
 
 with open('job.csv', 'r') as c: 
 	reader = csv.reader(c)
 	y = list(reader)
 	y.pop(0)
 	
-
-
-
 def sort_sex_values():
 	global men, women
 	men = []
 	women = []
 	i = 0
-	
 	while i < len(y):
 		x = y[i]
 		if x[0] == 'M':
@@ -30,15 +21,10 @@ def sort_sex_values():
 		if x[0] == 'F':
 			women.append(x[1])
 			i = i + 1
-
-	
-	
-	
 sort_sex_values()
 
 men_res = [eval(i) for i in men]
 women_res = [eval(i) for i in women]
-
 
 
 def average():
@@ -46,7 +32,6 @@ def average():
 	women_average = sum(women_res)/len(women_res)
 	print(men_average)
 	print(women_average)
-
 average()
 
 
@@ -61,17 +46,3 @@ def plotting():
 	axs[1].bar(h2, women_res)
 	plt.show()
 plotting()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
